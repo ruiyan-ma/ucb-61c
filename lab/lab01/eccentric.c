@@ -1,12 +1,13 @@
 #include <stdio.h>
 
 /* Only change any of these 4 values */
-#define V0 0
-#define V1 -1
-#define V2 0
-#define V3 0
+#define V0 3
+#define V1 3
+#define V2 3
+#define V3 3
 
-int main(void) {
+int main(void)
+{
     int a;
     char *s;
 
@@ -48,9 +49,12 @@ int main(void) {
     s = (V3 == 3) ? "Go" : "Boo";
 
     /* if statement */
-    if (V2) {
+    if (V2)
+    {
         printf("%s BEARS!\n", s);
-    } else {
+    }
+    else
+    {
         printf("%s CARDINAL!\n", s);
     }
 
