@@ -32,14 +32,14 @@ Color *evaluateOnePixel(Image *image, int row, int col)
 Image *steganography(Image *image)
 {
     Image *secret = (Image *) malloc(sizeof(Image));
-    int row = secret->rows = image->rows;
-    int col = secret->cols = image->cols;
-    secret->image = (Color **) malloc(sizeof(Color *) * row * col);
+    int rows = secret->rows = image->rows;
+    int cols = secret->cols = image->cols;
+    secret->image = (Color **) malloc(sizeof(Color *) * rows * cols);
 
     Color **p = secret->image;
-    for (int i = 0; i < row; i++)
+    for (int i = 0; i < rows; i++)
     {
-        for (int j = 0; j < col; ++j)
+        for (int j = 0; j < cols; ++j)
         {
             *p = evaluateOnePixel(image, i, j);
             ++p;
