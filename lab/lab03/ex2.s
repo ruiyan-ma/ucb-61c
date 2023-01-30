@@ -37,31 +37,31 @@ main:
     sw s3, 12(sp)
     sw ra, 16(sp)
     # END PROLOGUE
-    addi t0, x0, 0
-    addi s0, x0, 0
+    addi t0, x0, 0  # k
+    addi s0, x0, 0  # sum
     la s1, source
     la s2, dest
 loop:
-    slli s3, t0, 2
-    add t1, s1, s3
-    lw t2, 0(t1)
+    slli s3, t0, 2  # s3 = k * 4
+    add t1, s1, s3  # t1 = source + k * 4
+    lw t2, 0(t1)  # t2 = source[k]
     beq t2, x0, exit
-    add a0, x0, t2
-    addi sp, sp, -8
-    sw t0, 0(sp)
+    add a0, x0, t2  # a0 = source[k]
+    addi sp, sp, -8  # move stack pointer
+    sw t0, 0(sp)  # save t0 and t2 to stack
     sw t2, 4(sp)
-    jal fun
-    lw t0, 0(sp)
+    jal fun  # func(a0)
+    lw t0, 0(sp)  # restore t0 and t2 from stack
     lw t2, 4(sp)
-    addi sp, sp, 8
-    add t2, x0, a0
-    add t3, s2, s3
-    sw t2, 0(t3)
-    add s0, s0, t2
-    addi t0, t0, 1
+    addi sp, sp, 8  # move stack pointer
+    add t2, x0, a0  # t2 = a0 = func(source[k])
+    add t3, s2, s3  # t3 = dest + k * 4
+    sw t2, 0(t3)  # dest[k] = t2 = func(source[k])
+    add s0, s0, t2  # sum += t2
+    addi t0, t0, 1  # k += 1
     jal x0, loop
 exit:
-    add a0, x0, s0
+    add a0, x0, s0  # a0 = sum
     # BEGIN EPILOGUE
     lw s0, 0(sp)
     lw s1, 4(sp)

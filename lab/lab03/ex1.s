@@ -6,7 +6,7 @@ n: .word 9
 main:
     add t0, x0, x0
     addi t1, x0, 1
-    la t3, n
+    la t3, n # load address
     lw t3, 0(t3)
 fib:
     beq t3, x0, finish
