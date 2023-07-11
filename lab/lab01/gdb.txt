@@ -1,0 +1,9 @@
+1.lldb -- hello "args"
+2.b <num>
+3.next
+4.step
+5.continue
+6.print 4 + 5
+7.display <var>
+8.fr v
+9.Ctrl-D

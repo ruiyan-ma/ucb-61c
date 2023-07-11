@@ -1,0 +1,18 @@
+ex1
+1.data means stack and dynamic data, word means static data, text means programs.
+2.34, the 9th fibonacci number
+3.0x10000010
+4.change the value in memory 0x10000010 to 13
+
+ex2
+1.t0
+2.s0
+3.s1 and s2
+4.line 44-62
+5.addi
+
+ex3
+1.use uninitialized memory; do not save s0 and s1 in stack and overwrite then in the function.
+2.no because it is loop, not function call.
+3.because there is nested function call in inc_arr.
+4.because some other errors happened before CC checker checking s0, s1 and s11.

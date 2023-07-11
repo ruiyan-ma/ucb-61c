@@ -1,0 +1,20 @@
+--- not autograded ---
+
+Part 1
+    blocksize = 20, n = 100: 0.005, 0.005
+    blocksize = 20, n = 1000: 0.693, 0.609
+    blocksize = 20, n = 2000: 2.209, 1.791
+    blocksize = 20, n = 5000: 98.594, 25.047
+    blocksize = 20, n = 10000: 675.459, 92.089
+
+    Checkoff Question 1: n = 1000
+    Checkoff Question 2: because when the matrix is large enough, the non-cache blocked code needs to reload data frequently, while cache blocking code doesn't need to do that. 
+
+Part 2
+    blocksize = 50, n = 10000: 433.667, 70.756
+    blocksize = 100, n = 10000: 539.505, 66.687
+    blocksize = 500, n = 10000: 321.026, 75.406
+    blocksize = 1000, n = 10000: 348.436, 77.59
+    blocksize = 5000, n = 10000: 479.006, 451.317
+
+    Checkoff Question 3: first increase then decrease. Increase at first because larger block size can exploit more spatial locality on cache. Decrease after that because the block size is too large and we cannot store everything in that block in our cache, we need to reload data.

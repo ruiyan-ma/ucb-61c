@@ -1,0 +1,8 @@
+1.jki, kji
+2.ijk, jik
+
+--- lines below are ignored by the AG ---
+
+Checkoff Question 1: because if the innermost loop is loop i, then all matrices are moved with stride 1
+Checkoff Question 2: because in these two cases we need to move through A with stride n and keep loading new data.
+Checkoff Question 3: if all matrices are moved with stride 1 in the innermost loop, we will get a better performance. 

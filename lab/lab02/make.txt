@@ -1,0 +1,7 @@
+1.clean
+2.all: $(BINARIES)
+3.gcc
+4.c99
+5.$(FOO)
+6.Unix(MacOS)
+7.line 31

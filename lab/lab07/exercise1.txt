@@ -1,0 +1,24 @@
+Scenario 1
+    1.block size = 32B, step size = 32B
+    2.0 because the block size doesn't change and you only access one block.
+    3.step size, 1
+
+Scenario 2
+    1.64
+    2.MHHH, 3/4
+    3.1.0 because after the first iteration all data are in the cache
+
+Scenario 3
+    1.0.5, 0, 0.33
+    2.32, 16
+    3.16
+    4.the block size of L2
+    5.=, =, +, =
+
+--- lines below are ignored by the AG ---
+
+Checkoff Question 1: because the block size doesn't change and you only access one block
+Checkoff Question 2: 0 and 1
+Checkoff Question 3: 3/4
+Checkoff Question 4: because after the first iteration all data are in the cache, and every access will be a hit
+Checkoff Question 5: access one element of the array at a time and apply all of the functions to that element so we can be completely done with it before moving on, thereby keeping that element hot in the cache and not having to circle back to it later on.

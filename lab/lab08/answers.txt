@@ -1,0 +1,20 @@
+Exercise 1:
+    1.8
+    2.3, 7, 0, 7
+    3.No, no. Because we have 4 TLB entries and 4 page frames in physical memory. There are at most 4 valid entries in page table. If there is a TLB miss, then we cannot get anything useful from page table, and the data we want is not in memory.
+
+Exercise 2:
+    1.00, 20, 40, 60, 80, 00, 20, 40, 60, 80
+
+Exercise 3:
+    1.Physical memory. 
+
+--- lines below are ignored by the AG ---
+
+Exercise 1 Checkoff Questions:
+    1.At the very first access, we split the virtual address into page number and offset. Then we search TLB for the given page number and find nothing, which causes a TLB miss. Then we walk page table and find the valid bit is 0, which causes a page fault. Thus we visit the hard disk and load data into physical memory, and update TLB and page table.
+    2.Because we only have 4 page frames in physical memory and only need 2 bits for that. The virtual address has 3 bits for the VPN because each physical page frame is 8 words and we need 5 bits offset for that. 
+
+
+Exercise 4 Checkoff Question:
+    1.P1, P2, P3, P4 are different processes. TLB will be reset when switch context. Thus there is a higher percentage of TLB misses. 
