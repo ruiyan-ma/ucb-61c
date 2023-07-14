@@ -1,21 +1,25 @@
 # CS61CPU
 
-## Control Signals
+Project document: https://inst.eecs.berkeley.edu/~cs61c/fa20/projects/proj3/
 
-|        | R    | I              | S    | SB   | U               | UJ   |      |      |       |
-| ------ | ---- | -------------- | ---- | ---- | --------------- | ---- | ---- | ---- | ----- |
-|        |      | load & imme    |      |      | aupic & lui     |      | jalr | csrw | csrwi |
-| PCSel  |      |                |      | D    |                 | 1    | 1    |      |       |
-| RegWEn | 1    | 1              |      |      | 1               | 1    | 1    |      |       |
-| ImmSel |      | 0              | 1    | 2    | 3               | 4    | 0    |      | 5     |
-| BrUn   |      |                |      | D    |                 |      |      |      |       |
-| ASel   |      |                |      | 1    | aupic 1         | 1    |      |      |       |
-| BSel   |      | 1              | 1    | 1    | 1               | 1    | 1    |      |       |
-| ALUSel | D    | load 0, imme D | 0    | 0    | lui 0, aupic 13 | 0    | 0    |      |       |
-| MemRW  |      |                | 1    |      |                 |      |      |      |       |
-| WBSel  | 1    | load 0, imme 1 |      |      | 1               | 2    | 2    |      |       |
-| CSRSel |      |                |      |      |                 |      |      |      | 1     |
-| CSRWen |      |                |      |      |                 |      |      | 1    | 1     |
+## Control Logic Design
+
+I use combinational logic to implement the control logic. Here is the control signal table. 
+
+|        | R Type | I Type         | S Type | SB Type | U Type          | UJ Type |      |      |       |
+| ------ | ------ | -------------- | ------ | ------- | --------------- | ------- | ---- | ---- | ----- |
+|        |        | load & imme    |        |         | aupic & lui     |         | jalr | csrw | csrwi |
+| PCSel  |        |                |        | D       |                 | 1       | 1    |      |       |
+| RegWEn | 1      | 1              |        |         | 1               | 1       | 1    |      |       |
+| ImmSel |        | 0              | 1      | 2       | 3               | 4       | 0    |      | 5     |
+| BrUn   |        |                |        | D       |                 |         |      |      |       |
+| ASel   |        |                |        | 1       | aupic 1         | 1       |      |      |       |
+| BSel   |        | 1              | 1      | 1       | 1               | 1       | 1    |      |       |
+| ALUSel | D      | load 0, imme D | 0      | 0       | lui 0, aupic 13 | 0       | 0    |      |       |
+| MemRW  |        |                | 1      |         |                 |         |      |      |       |
+| WBSel  | 1      | load 0, imme 1 |        |         | 1               | 2       | 2    |      |       |
+| CSRSel |        |                |        |         |                 |         |      |      | 1     |
+| CSRWen |        |                |        |         |                 |         |      | 1    | 1     |
 
 - PCSel = 0 for PC + 4 , 1 for ALU
 - BrUn = 0 for signed, 1 for unsigned
