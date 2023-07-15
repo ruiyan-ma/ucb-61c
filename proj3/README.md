@@ -4,19 +4,19 @@ Project document: https://inst.eecs.berkeley.edu/~cs61c/fa20/projects/proj3/
 
 ## ALU Design
 
-![image-20230714223406447](/Users/ruiyan/Library/Application Support/typora-user-images/image-20230714223406447.png)
+![ALU](images/ALU.png)
 
 ## Register File Design
 
-![image-20230714223445594](/Users/ruiyan/Library/Application Support/typora-user-images/image-20230714223445594.png)
+![RegFile](images/RegFile.png)
 
 ## Immediate Generator Design
 
-![image-20230714223530419](/Users/ruiyan/Library/Application Support/typora-user-images/image-20230714223530419.png)
+![ImmeGen](images/ImmeGen.png)
 
 ## Branch Comparator Design
 
-![image-20230714223619240](/Users/ruiyan/Library/Application Support/typora-user-images/image-20230714223619240.png)
+![BranchComp](images/BranchComp.png)
 
 ## Control Logic Design
 
@@ -80,8 +80,8 @@ I use combinational logic to implement the control logic. Here is the control si
 - funct3 = 1 for sll and mulh
 - funct3 = 5 for srl and sra
 
-![image-20230714223643721](/Users/ruiyan/Library/Application Support/typora-user-images/image-20230714223643721.png)
+![ControlLogic](images/ControlLogic.png)
 
 ## CPU Desing
 
-![image-20230714223713126](/Users/ruiyan/Library/Application Support/typora-user-images/image-20230714223713126.png)
+![CPU](images/CPU.png)
